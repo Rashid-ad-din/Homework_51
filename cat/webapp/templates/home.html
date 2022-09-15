@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Cat</title>
+</head>
+<body>
+<div class="container bg-light p-0">
+
+    <nav class="navbar bg-info">
+      <div class="container-fluid">
+        <a class="navbar-brand btn btn-warning">Pets.com</a>
+      </div>
+    </nav>
+
+    <div class="text-center mt-5 pb-5">
+        <h1>Вас приветствует симулятор кота. Для начала введите имя кота.</h1>
+        <form action="information/" method="post">
+            {% csrf_token %}
+            <input type="text" name="cat" id="cat" class="mt-4">
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
